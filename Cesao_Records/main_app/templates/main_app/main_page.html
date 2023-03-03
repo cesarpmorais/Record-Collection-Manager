@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+        Cesão Records
+    </title>
+  </head>
+
+  <body style="background-color: #373767; font-family: Arial">
+    <h1 style="text-align: center; color: #FFFFFF">
+        Cesão Records!
+    </h1>
+
+    {% if my_records %}
+        <table 
+        style="background-color: #FFFFFF; text-align: center;"
+        >
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Artist</th>
+                <th>Release Date</th>
+                <th>Pressing Year</th>
+                <th>Mono/Stereo</th>
+                <th>Cover Rating</th>
+                <th>Disc Rating</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for r in my_records %}
+            <tr>
+                <td> {{r.album.name}} </td>
+                <td> {{r.album.artist.name}}
+                <td> {{r.album.release_date}} </td>
+                <td> {{r.pressing_year}} </td>
+                <td> {{r.channels}} </td>
+                <td> {{r.cover_rating}} </td>
+                <td> {{r.disc_rating}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+        </table>
+    {% else %}
+        <p>No records were found!</p>
+    {% endif %}
+  </body>
+
+</html>
+

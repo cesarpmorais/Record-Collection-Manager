@@ -28,7 +28,7 @@ class CollectionAdmin(admin.ModelAdmin):
     
 @admin.register(Record)
 class RecordAdmin(admin.ModelAdmin):
-    list_display = ('album_name', 'pressing_year', 'cover_rating', 'disc_rating')
+    list_display = ('album_name', 'channels', 'pressing_year', 'cover_rating', 'disc_rating')
     
     def album_name(self, obj):
         return obj.album.name

@@ -28,7 +28,7 @@ class Album(models.Model):
     description = models.TextField()
     length = models.CharField(max_length=5)
     
-    my_review = models.TextField(max_length=255, null=True, blank=True)
+    my_review = models.TextField(max_length=1000, null=True, blank=True)
     my_rating = models.FloatField(null=True, blank=True)
     
     class Meta:
@@ -56,18 +56,24 @@ class Song(models.Model):
     
 class Record(models.Model):
     id = models.BigAutoField(primary_key=True)
-    collection = models.OneToOneField(Collection, on_delete=models.CASCADE,)
+    collection = models.ForeignKey(Collection, on_delete=models.CASCADE,)
     album = models.ForeignKey(Album, on_delete=models.CASCADE, null=True)
     country_of_origin = models.CharField(max_length=20)
     pressing_year = models.CharField(max_length=4)
     
+    class Channels(models.TextChoices):
+        STEREO = 'Stereo', _('Stereo')
+        MONO = 'Mono', _('Mono')
+        
+    channels = models.CharField(max_length=20, choices=Channels.choices, null=True)
+    
     class Ratings(models.TextChoices):
-        MINT = 'MINT', _('M')
-        NEAR_MINT = 'NEAR MINT', _('NM')
-        VERY_GOOD_PLUS = 'VERY GOOD PLUS', _('VG+')
-        VERY_GOOD = 'VERY GOOD', _('VG')
-        GOOD = 'GOOD', _('G')
-        POOR = 'POOR', _('P')
+        MINT = 'Mint', _('M')
+        NEAR_MINT = 'Near Mint', _('NM')
+        VERY_GOOD_PLUS = 'Very Good +', _('VG+')
+        VERY_GOOD = 'Very Good', _('VG')
+        GOOD = 'Good', _('G')
+        POOR = 'Poor', _('P')
 
     cover_rating = models.CharField(max_length=20, choices=Ratings.choices)
     disc_rating = models.CharField(max_length=20, choices=Ratings.choices)
