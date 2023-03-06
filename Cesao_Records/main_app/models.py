@@ -24,6 +24,7 @@ class Album(models.Model):
     id = models.BigAutoField(primary_key=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
+    cover = models.ImageField(upload_to='covers/', null=True, blank=True)
     release_date = models.DateField()
     description = models.TextField()
     length = models.CharField(max_length=5)
