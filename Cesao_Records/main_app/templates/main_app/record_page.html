@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+    <title>
+        Cesão Records
+    </title>
+  </head>
+
+  <body class="body_style">
+    <p> {{ this_record.album.name }}, {{ this_record.album.artist }}, {{this_record.cover_rating}} </p>
+  </body>
+
+</html>
+

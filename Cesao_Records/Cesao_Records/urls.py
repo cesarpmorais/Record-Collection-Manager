@@ -20,5 +20,6 @@ from main_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.main_page, name='Main Page')
+    path('', views.main_page, name='Main Page'),
+    path('record/<album_name>/<record_id>', views.record_page)
 ]

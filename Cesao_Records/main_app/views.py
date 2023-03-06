@@ -4,7 +4,7 @@ from django.template import loader
 
 from main_app.models import Record
 
-# Create your views here.
+
 def main_page(request):
     my_records = Record.objects.all().order_by('album__name')
     
@@ -15,5 +15,19 @@ def main_page(request):
     return render(
         request=request,
         template_name='main_app/main_page.html',
+        context=context
+    )
+    
+    
+def record_page(request, album_name, record_id):
+    this_record = Record.objects.get(id=record_id)
+    
+    context = {
+        'this_record': this_record,
+    }
+    
+    return render(
+        request=request,
+        template_name='main_app/record_page.html',
         context=context
     )
