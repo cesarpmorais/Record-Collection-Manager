@@ -1,0 +1,51 @@
+.body_style {
+    background-color: #373767;
+    font-family: "Arial";
+    zoom: 170%;
+}
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+.table {
+    background-color: rgb(253, 224, 229);
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table thead th {
+    background-color: rgb(255, 255, 255);
+    color: #373767;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: rgb(255, 218, 224);
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px rgba(21, 17, 36, 0.15);
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    color: #373767;
+}

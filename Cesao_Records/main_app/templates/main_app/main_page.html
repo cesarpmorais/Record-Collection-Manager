@@ -2,20 +2,22 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
     <title>
         Cesão Records
     </title>
   </head>
 
-  <body style="background-color: #373767; font-family: Arial">
-    <h1 style="text-align: center; color: #FFFFFF">
+  <body class="body_style">
+    <h1 class="title">
         Cesão Records!
     </h1>
 
     {% if my_records %}
-        <table 
-        style="background-color: #FFFFFF; text-align: center;"
-        >
+        <table class="table">
 
         <thead>
             <tr>
@@ -26,6 +28,7 @@
                 <th>Mono/Stereo</th>
                 <th>Cover Rating</th>
                 <th>Disc Rating</th>
+                <th>View Record</th>
             </tr>
         </thead>
 
@@ -39,6 +42,7 @@
                 <td> {{r.channels}} </td>
                 <td> {{r.cover_rating}} </td>
                 <td> {{r.disc_rating}} </td>
+                <td> <a href="/record/{{ r.album.name |slugify}}/{{ r.id }}" class="button"> View! </a> </td>
             </tr>
             {% endfor %}
         </tbody>
