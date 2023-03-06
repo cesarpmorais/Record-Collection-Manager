@@ -4,15 +4,34 @@
     <meta charset="utf-8" />
 
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/record_page_style.css' %}"/>
 
     <title>
-        Cesão Records
+      Cesão Records
     </title>
   </head>
 
   <body class="body_style">
-    <p> {{ this_record.album.name }}, {{ this_record.album.artist }}, {{this_record.cover_rating}} </p>
+    <h2 class="right_header"> {{ this_record.album.my_rating }}/10 </h2>
+    <h1 class="title"> {{ this_record.album.name }} </h1>
+    <h2 class="subtitle"> {{ this_record.album.artist }} ({{ this_record.album.release_date }}) </h2>
+
+    <ul class="list">
+      {% for song in songs %}
+        <li> {{ song }} </li>
+      {% endfor %}
+    </ul>
+
+    <hr/>
+
+    <h2 class="heading"> <u> My Record </u> </h2>
+    <p style="color: white;"> <b> Country of Origin: </b> {{ this_record.country_of_origin }} </p>
+    <p style="color: white;"> <b> Pressing Year: </b> {{ this_record.pressing_year }} </p>
+    <p style="color: white;"> <b> Mono/Stereo: </b> {{ this_record.channels }} </p>
+    <p style="color: white;"> <b> Cover Rating: </b> {{ this_record.cover_rating }} </p>
+    <p style="color: white;"> <b> Disc Rating: </b> {{ this_record.disc_rating }} </p>
+    <p style="color: white;"> <b> Obs: </b> {{ this_record.obs }} </p>
+
   </body>
 
 </html>

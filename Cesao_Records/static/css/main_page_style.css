@@ -20,7 +20,7 @@
 }
 
 .table thead th {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: #373767;
     text-align: left;
 }
