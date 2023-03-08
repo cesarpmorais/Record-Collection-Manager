@@ -12,15 +12,25 @@
   </head>
 
   <body class="body_style">
-    <h2 class="right_header"> {{ this_record.album.my_rating }}/10 </h2>
-    <h1 class="title"> {{ this_record.album.name }} </h1>
-    <h2 class="subtitle"> {{ this_record.album.artist }} ({{ this_record.album.release_date }}) </h2>
 
-    <ul class="list">
-      {% for song in songs %}
-        <li> {{ song }} </li>
-      {% endfor %}
-    </ul>
+    <div class="container">
+      <div>
+        <img src={{ this_record.album.cover.url }} class="cover">
+      </div>
+
+      <div class="text">
+        <h2 class="right_header"> {{ this_record.album.my_rating }}/10 </h2>
+        <h1 class="title"> {{ this_record.album.name }} </h1>
+        <h2 class="subtitle"> {{ this_record.album.artist }} ({{ this_record.album.release_date }}) </h2>
+
+        <ul class="list">
+          {% for song in songs %}
+            <li> {{ song }} </li>
+          {% endfor %}
+        </ul>
+    
+      </div>
+    </div>
 
     <hr/>
 
