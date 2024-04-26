@@ -1,16 +1,8 @@
-# Cesão's Records
-##### A django manager for my record collection!
+# VinylLog
+This is a music collection manager based on the Discogs API. It's made using Django and React - and it's a personal project where I truly aim to log my vinyl collection in it, so there is a learning, but also functional aspect to it.
 
-### Logs
+The project started in March 2023 as a simple CRUD Display for the collection, however in April 2024 I decided to come back to it and enhance it further, using the Discogs API so I can add records faster, and also to introduce React and a better design to the app.
 
-<p><u>02/03/2023</u>:  Added django models and admin basic funcionality.</p>
-<p><u>03/03/2023</u>:  Added home HTML page (first version).</p>
-<p><u>06/03/2023</u>:  Added css to home page, created prototype of "record" page and added album cover.</p>
-
-### Goals
-
-- <s>Create models</s>
-- <s>Basic HTML main page </s>
-- <s>Add CSS to main page </s>
-- Records view
-- "Add album" view
+## Goals
+- Refactor frontend (adding React)
+- Add Discogs API integration: import records to the app
