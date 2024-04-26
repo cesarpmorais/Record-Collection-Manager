@@ -3,7 +3,7 @@ This is a music collection manager based on the Discogs API. It's made using Dja
 
 The project started in March 2023 as a simple CRUD Display for the collection, however in April 2024 I decided to come back to it and enhance it further, using the Discogs API so I can add records faster, and also to introduce React and a better design to the app.
 
-The main branch contains the apps V1, developed in 2023.
+The main branch contains the app's V1, developed in 2023.
 
 ## Goals
 - Refactor frontend (adding React);
